@@ -1,3 +1,4 @@
+import 'package:Drushya/Firebase/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,9 +13,7 @@ class StartDrushya extends StatelessWidget {
     return const MaterialApp(
       title: "Drushya App",
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(child: Text("Welcome, Drushya Here.!!"),),
-      ),
+      home: LoginPage()
     );
   }
 }
