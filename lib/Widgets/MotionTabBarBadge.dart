@@ -30,7 +30,7 @@ class _MotionBarDemoState extends State<MotionBarDemo> with TickerProviderStateM
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: AppBar(
-            title: Text("Motion Badge and Bar"),
+            title: Text("Motion Badge and Bar",),
           ),
           bottomNavigationBar: MotionTabBar(
             initialSelectedTab: "Home",

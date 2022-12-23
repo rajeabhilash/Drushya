@@ -1,6 +1,6 @@
-import 'package:drushya/Widgets/DmDrawer.dart';
-import 'package:drushya/Widgets/DmSliverAppBar.dart';
 import 'package:flutter/material.dart';
+import 'DmDrawer.dart';
+import 'DmSliverAppBar.dart';
 
 class TabAndDrawer extends StatelessWidget {
   const TabAndDrawer({Key? key}) : super(key: key);
