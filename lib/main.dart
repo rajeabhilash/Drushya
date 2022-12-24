@@ -1,7 +1,9 @@
-import 'package:Drushya/Firebase/login.dart';
+import 'package:Drushya/DataStructure/SimpleDS.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
   runApp(const StartDrushya());
 }
 
@@ -10,10 +12,13 @@ class StartDrushya extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: "Drushya App",
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+      ),
       debugShowCheckedModeBanner: false,
-      home: LoginPage()
+      home: SimpleDS()
     );
   }
 }
