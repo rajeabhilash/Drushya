@@ -1,9 +1,8 @@
-import 'package:Drushya/DataStructure/SimpleDS.dart';
+import 'package:Drushya/Neumorphism/NeuHome.dart';
+import 'package:Drushya/Neumorphism/NeuTheme.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
   runApp(const StartDrushya());
 }
 
@@ -14,11 +13,11 @@ class StartDrushya extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Drushya App",
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-      ),
+      themeMode: ThemeMode.dark,
+      theme: NeuTheme.lightTheme,
+      darkTheme: NeuTheme.darkTheme,
       debugShowCheckedModeBanner: false,
-      home: SimpleDS()
+      home: HomePage(),
     );
   }
 }
