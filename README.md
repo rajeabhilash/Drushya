@@ -1,16 +1,14 @@
-# drushya
+# Drushya
 
-A new Flutter project.
+## This is Project created for testing all the components of Flutter
 
-## Getting Started
+1. Widgets
+  - All Basic Widgets such as Scaffold, Containers and Custom Widgets.
+  - Neumorphic Widgets.
+  - Animations in Widgets.
+  - Dynamic views for both Web and Mobile Platforms using Links.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. API
+  - REST API
+  - AdMob API
+  - Database connections and Other Data Sources related API
