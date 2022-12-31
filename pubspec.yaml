@@ -39,6 +39,8 @@ dependencies:
   motion_tab_bar_v2: ^0.2.3
   firebase_auth: ^4.2.3
   google_fonts: ^3.0.1
+  provider: ^6.0.5
+  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:

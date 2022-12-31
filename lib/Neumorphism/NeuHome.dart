@@ -1,3 +1,5 @@
+import 'package:Drushya/Neumorphism/NeuTheme.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -5,32 +7,104 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeText =
-        MediaQuery.of(context).platformBrightness == Brightness.light
-            ? "Light Theme"
-            : "Dark Theme";
+    final GlobalKey<ScaffoldState> _key = GlobalKey();
+    bool isDark =
+        Provider.of<NeuThemeProvider>(context).themeMode == ThemeMode.dark
+            ? true
+            : false;
 
     return Scaffold(
-      drawer: const Drawer(),
-      appBar: AppBar(
-        title: Text(themeText),
-        centerTitle: true,
-      ),
-      body: Container(),
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {}, child: Icon(Icons.account_balance_sharp)),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.add_a_photo), label: "Home"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.ac_unit_outlined), label: "Home"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.accessible_forward), label: "Home"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.paragliding_outlined), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.security), label: "Home"),
-        ],
-      ),
-    );
+        key: _key,
+        drawer: const Drawer(),
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          elevation: 0,
+          iconTheme: Theme.of(context).iconTheme,
+          title: Text("Drushya Neumorphism"),
+          centerTitle: true,
+        ),
+        body: Container(
+            child: Center(
+                child: Container(
+          width: 500.0,
+          height: 500.0,
+          color: Theme.of(context).scaffoldBackgroundColor,
+          alignment: Alignment.center,
+          transformAlignment: Alignment.center,
+          child: Container(
+            color: Theme.of(context).scaffoldBackgroundColor,
+            child: Container(
+              width: 200,
+              height: 200,
+              child: Icon(
+                Icons.star,
+                size: 67,
+                color: Theme.of(context).hintColor,
+              ),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Theme.of(context).scaffoldBackgroundColor
+                    : Color(0xffefeeee),
+                borderRadius: BorderRadius.circular(10),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Theme.of(context).scaffoldBackgroundColor,
+                    Theme.of(context).scaffoldBackgroundColor,
+                  ],
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: isDark ? Color(0xff515151) : Color(0xffefeee),
+                    offset: Offset(-20.0, -20.0),
+                    blurRadius: 30,
+                    spreadRadius: 0.0,
+                  ),
+                  BoxShadow(
+                    color: isDark ? Color(0xff151515) : Color(0xffd1d0d0),
+                    offset: Offset(20.0, 20.0),
+                    blurRadius: 30,
+                    spreadRadius: 0.0,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ))),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+        floatingActionButton: FloatingActionButton(
+          elevation: 0,
+          child: isDark ? Icon(Icons.sunny) : Icon(Icons.nightlight),
+          // label: const Text('Add a task'),
+          onPressed: () {
+            final provider =
+                Provider.of<NeuThemeProvider>(context, listen: false);
+            isDark = isDark ? false : true;
+            provider.toggleTheme(isDark);
+          },
+        ),
+        bottomNavigationBar: BottomAppBar(
+          elevation: 0,
+          shape: CircularNotchedRectangle(),
+          notchMargin: 4.0,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              IconButton(
+                icon: Icon(Icons.menu),
+                onPressed: () {
+                  _key.currentState!.openDrawer();
+                },
+              ),
+              // const Spacer(),
+              IconButton(
+                icon: Icon(Icons.search),
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ));
   }
 }
