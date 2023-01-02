@@ -1,4 +1,4 @@
-import 'package:Drushya/Neumorphism/NeuHome.dart';
+import 'package:Drushya/Animations/AnimeSimple.dart';
 import 'package:Drushya/Neumorphism/NeuTheme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,7 +25,7 @@ class StartDrushya extends StatelessWidget {
           theme: NeuTheme.lightTheme,
           darkTheme: NeuTheme.darkTheme,
           debugShowCheckedModeBanner: false,
-          home: HomePage(),
+          home: AnimeHome(),
         );
       },
     );

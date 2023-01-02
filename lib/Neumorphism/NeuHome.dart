@@ -16,13 +16,6 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         key: _key,
         drawer: const Drawer(),
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          elevation: 0,
-          iconTheme: Theme.of(context).iconTheme,
-          title: Text("Drushya Neumorphism"),
-          centerTitle: true,
-        ),
         body: Container(
             child: Center(
                 child: Container(
@@ -32,8 +25,6 @@ class HomePage extends StatelessWidget {
           alignment: Alignment.center,
           transformAlignment: Alignment.center,
           child: Container(
-            color: Theme.of(context).scaffoldBackgroundColor,
-            child: Container(
               width: 200,
               height: 200,
               child: Icon(
@@ -43,24 +34,25 @@ class HomePage extends StatelessWidget {
               ),
               decoration: BoxDecoration(
                 color: isDark
-                    ? Theme.of(context).scaffoldBackgroundColor
-                    : Color(0xffefeeee),
-                borderRadius: BorderRadius.circular(10),
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    Theme.of(context).scaffoldBackgroundColor,
-                    Theme.of(context).scaffoldBackgroundColor,
-                  ],
+                  ? Theme.of(context).scaffoldBackgroundColor
+                  : Color(0xffffeeee),
+              borderRadius: BorderRadius.circular(10),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Theme.of(context).scaffoldBackgroundColor,
+                  Theme.of(context).scaffoldBackgroundColor,
+                ],
+              ),
+              boxShadow: [
+                BoxShadow(
+                    color: isDark ? Color(0xff515151) : Color(0xffd1d0d0),
+                  //Color(0xffefeee),
+                  offset: Offset(-20.0, -20.0),
+                  blurRadius: 30,
+                  spreadRadius: 0.0,
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: isDark ? Color(0xff515151) : Color(0xffefeee),
-                    offset: Offset(-20.0, -20.0),
-                    blurRadius: 30,
-                    spreadRadius: 0.0,
-                  ),
                   BoxShadow(
                     color: isDark ? Color(0xff151515) : Color(0xffd1d0d0),
                     offset: Offset(20.0, 20.0),
@@ -70,7 +62,6 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-          ),
         ))),
         floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
         floatingActionButton: FloatingActionButton(
