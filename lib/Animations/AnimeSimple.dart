@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:Drushya/Neumorphism/NeuTheme.dart';
@@ -14,6 +16,7 @@ class _AnimeHomeState extends State<AnimeHome>
   late Animation<double> animation;
   late AnimationController controller;
   late Animation colorAnimation;
+  bool isForward = true;
 
   @override
   void initState() {
@@ -43,17 +46,43 @@ class _AnimeHomeState extends State<AnimeHome>
       body: Center(
         child: GestureDetector(
           onTap: () {
-            controller.forward();
+            if (isForward) {
+              controller.forward();
+              isForward = isForward ? false : true;
+            } else {
+              controller.reverse();
+              isForward = isForward ? false : true;
+            }
           },
           child: Container(
-            decoration: BoxDecoration(
-                color: colorAnimation.value,
-                borderRadius: BorderRadius.circular(10)),
-            margin: const EdgeInsets.symmetric(vertical: 10),
-            height: animation.value,
-            width: animation.value,
-            child: const FlutterLogo(),
-          ),
+              decoration: BoxDecoration(
+                  color: Colors.deepPurpleAccent,
+                  borderRadius: BorderRadius.circular(10)),
+              margin: const EdgeInsets.symmetric(vertical: 10),
+              height: 250,
+              width: 250,
+              child: Center(
+                child: AnimatedBuilder(
+                  // pass our AnimationController as the animation argument
+                  animation: controller,
+                  // pass the child widget that we will animate
+                  child: Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.red,
+                    padding: EdgeInsets.all(10),
+                  ),
+                  // add a builder argument
+                  builder: (context, child) {
+                    // use a Transform widget to apply a rotation
+                    return Transform.rotate(
+                      // the angle is a function of the AnimationController's value
+                      angle: 0.5 * pi * controller.value,
+                      child: child,
+                    );
+                  },
+                ),
+              )),
         ),
       ),
       floatingActionButton: FloatingActionButton(
