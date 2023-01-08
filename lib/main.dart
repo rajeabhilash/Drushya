@@ -1,5 +1,6 @@
 import 'package:Drushya/Neumorphism/NeuTheme.dart';
 import 'package:Drushya/Widgets/DmDrawer.dart';
+import 'package:Drushya/Widgets/MotionTabBarBadge.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'Neumorphism/NeuHome.dart';
@@ -26,7 +27,7 @@ class StartDrushya extends StatelessWidget {
           theme: NeuTheme.lightTheme,
           darkTheme: NeuTheme.darkTheme,
           debugShowCheckedModeBanner: false,
-          home: DmDrawer(),
+          home: MotionBarDemo(),
         );
       },
     );
