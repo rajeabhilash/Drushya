@@ -9,9 +9,10 @@ class DmDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: const <Widget>[
-          DrawerHeader(child: Text("Drawer Header"), decoration: BoxDecoration(color: Colors.teal),),
-          ListTile(title: Text("Addya Padya"),),
-          ListTile(title: Text("Pungat Padya"),)
+          DrawerHeader(
+            child: Text("Drawer Header"),
+            decoration: BoxDecoration(color: Colors.teal),
+          ),
         ],
       ),
     );

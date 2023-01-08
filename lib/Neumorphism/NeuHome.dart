@@ -25,15 +25,15 @@ class HomePage extends StatelessWidget {
           alignment: Alignment.center,
           transformAlignment: Alignment.center,
           child: Container(
-              width: 200,
-              height: 200,
-              child: Icon(
-                Icons.star,
-                size: 67,
-                color: Theme.of(context).hintColor,
-              ),
-              decoration: BoxDecoration(
-                color: isDark
+            width: 200,
+            height: 200,
+            child: Icon(
+              Icons.star,
+              size: 67,
+              color: Theme.of(context).hintColor,
+            ),
+            decoration: BoxDecoration(
+              color: isDark
                   ? Theme.of(context).scaffoldBackgroundColor
                   : Color(0xffffeeee),
               borderRadius: BorderRadius.circular(10),
@@ -47,21 +47,21 @@ class HomePage extends StatelessWidget {
               ),
               boxShadow: [
                 BoxShadow(
-                    color: isDark ? Color(0xff515151) : Color(0xffd1d0d0),
+                  color: isDark ? Color(0xff515151) : Color(0xffd1d0d0),
                   //Color(0xffefeee),
                   offset: Offset(-20.0, -20.0),
                   blurRadius: 30,
                   spreadRadius: 0.0,
                 ),
-                  BoxShadow(
-                    color: isDark ? Color(0xff151515) : Color(0xffd1d0d0),
-                    offset: Offset(20.0, 20.0),
-                    blurRadius: 30,
-                    spreadRadius: 0.0,
-                  ),
-                ],
-              ),
+                BoxShadow(
+                  color: isDark ? Color(0xff151515) : Color(0xffd1d0d0),
+                  offset: Offset(20.0, 20.0),
+                  blurRadius: 30,
+                  spreadRadius: 0.0,
+                ),
+              ],
             ),
+          ),
         ))),
         floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
         floatingActionButton: FloatingActionButton(
@@ -76,7 +76,7 @@ class HomePage extends StatelessWidget {
           },
         ),
         bottomNavigationBar: BottomAppBar(
-          elevation: 0,
+          elevation: 4,
           shape: CircularNotchedRectangle(),
           notchMargin: 4.0,
           child: Row(

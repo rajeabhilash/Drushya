@@ -9,20 +9,22 @@ class MotionBarDemo extends StatefulWidget {
   State<MotionBarDemo> createState() => _MotionBarDemoState();
 }
 
-class _MotionBarDemoState extends State<MotionBarDemo> with TickerProviderStateMixin {
+class _MotionBarDemoState extends State<MotionBarDemo>
+    with TickerProviderStateMixin {
   TabController? _tabController;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(initialIndex:1, length: 4, vsync: this);
+    _tabController = TabController(initialIndex: 1, length: 4, vsync: this);
   }
 
   @override
   void dispose() {
-   super.dispose();
+    super.dispose();
     _tabController!.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,13 +32,20 @@ class _MotionBarDemoState extends State<MotionBarDemo> with TickerProviderStateM
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: AppBar(
-            title: Text("Motion Badge and Bar",),
+            title: const Text(
+              "Motion Badge and Bar",
+            ),
           ),
           bottomNavigationBar: MotionTabBar(
             initialSelectedTab: "Home",
             useSafeArea: true, // default: true, apply safe area wrapper
             labels: const ["Dashboard", "Home", "Profile", "Settings"],
-            icons: const [Icons.dashboard, Icons.home, Icons.people_alt, Icons.settings],
+            icons: const [
+              Icons.dashboard,
+              Icons.home,
+              Icons.people_alt,
+              Icons.settings
+            ],
 
             // optional badges, length must be same with labels
             badges: [
@@ -92,7 +101,8 @@ class _MotionBarDemoState extends State<MotionBarDemo> with TickerProviderStateM
             },
           ),
           body: TabBarView(
-            physics: NeverScrollableScrollPhysics(), // swipe navigation handling is not supported
+            physics:
+                NeverScrollableScrollPhysics(), // swipe navigation handling is not supported
             controller: _tabController,
             // ignore: prefer_const_literals_to_create_immutables
             children: <Widget>[
@@ -110,7 +120,6 @@ class _MotionBarDemoState extends State<MotionBarDemo> with TickerProviderStateM
               ),
             ],
           ),
-        )
-    );
+        ));
   }
 }
