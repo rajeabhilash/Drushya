@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
             decoration: BoxDecoration(
               color: isDark
                   ? Theme.of(context).scaffoldBackgroundColor
-                  : Color(0xffffeeee),
+                  : const Color(0xffffeeee),
               borderRadius: BorderRadius.circular(10),
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
