@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DNavigation extends StatelessWidget {
-  const DNavigation({Key? key}) : super(key: key);
+class LandedPage extends StatelessWidget {
+  const LandedPage({super.key});
 
   @override
   Widget build(BuildContext context) {

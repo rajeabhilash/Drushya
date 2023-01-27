@@ -1,33 +1,22 @@
-import 'package:Drushya/Navigations/drushya_home.dart';
-import 'package:Drushya/Neumorphism/NeuTheme.dart';
+import 'package:Drushya/landing/landed.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 void main() async {
   runApp(const StartDrushya());
 }
 
 class StartDrushya extends StatelessWidget {
-  const StartDrushya({Key? key}) : super(key: key);
+  const StartDrushya({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) {
-        return NeuThemeProvider();
-      },
-      builder: (context, _) {
-        final themeProvider = Provider.of<NeuThemeProvider>(context);
-        return MaterialApp(
-          title: "Drushya App",
-          // themeMode: ThemeMode.dark,
-          themeMode: themeProvider.themeMode,
-          theme: NeuTheme.lightTheme,
-          darkTheme: NeuTheme.darkTheme,
-          debugShowCheckedModeBanner: false,
-          home: const DrushyaHome(),
-        );
-      },
+    return MaterialApp(
+      title: "Drushya Tantradhnyan",
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+      ),
+      home: const LandedPage(),
     );
   }
 }
