@@ -60,6 +60,10 @@ class _LandedPageState extends State<LandedPage> {
           )
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.play_arrow),
+      ),
     );
   }
 }
