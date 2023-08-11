@@ -15,7 +15,7 @@ class StartDrushya extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         primaryColor: Colors.teal,
         primarySwatch: Colors.teal,
       ),
