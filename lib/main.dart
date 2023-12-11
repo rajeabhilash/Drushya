@@ -1,4 +1,4 @@
-import 'package:Drushya/landing/landed.dart';
+import 'package:Drushya/init/start.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -19,7 +19,7 @@ class StartDrushya extends StatelessWidget {
         primaryColor: Colors.teal,
         primarySwatch: Colors.teal,
       ),
-      home: const LandedPage(),
+      home: const Start(),
     );
   }
 }
